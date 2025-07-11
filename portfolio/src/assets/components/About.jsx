@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import photo1 from "./photos/IMG_4360.jpg";
 import photo2 from "./photos/banner.png";
 import photo3 from "./photos/IMG_6850.jpeg";
-import natureVideo from "./photos/IMG_5349.MP4";
+import photo4 from "./photos/IMG_5338.JPEG";
+// import natureVideo from "./photos/IMG_5349.MP4";
 
 // Array of hobbies, each with an image, title, description, icon, and optional link or video
 const hobbies = [
@@ -19,7 +20,7 @@ const hobbies = [
     icon: "🏀"
   },
   {
-    video: natureVideo,
+    image: photo4,
     title: "Nature",
     description: "Experimenting in the kitchen is my way to relax and create.",
     icon: "🌿"
@@ -41,24 +42,13 @@ export default function About() {
 
   return (
     <section id="about" className="max-w-3xl mx-auto py-24 px-4 flex flex-col md:flex-row gap-12 items-center justify-center">
-      {/* Image or Video */}
+      {/* Image */}
       <div className="w-full max-w-sm flex-shrink-0">
-        {hobbies[current].video ? (
-          <video
-            src={hobbies[current].video}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="rounded-xl object-cover object-bottom w-full h-80 shadow-md"
-          />
-        ) : (
-          <img
-            src={hobbies[current].image}
-            alt={hobbies[current].title}
-            className="rounded-xl object-cover w-full h-80 shadow-md"
-          />
-        )}
+        <img
+          src={hobbies[current].image}
+          alt={hobbies[current].title}
+          className="rounded-xl object-cover w-full h-80 shadow-md"
+        />
       </div>
       {/* Hobby Info */}
       <div className="flex-1 flex flex-col items-center md:items-start">
